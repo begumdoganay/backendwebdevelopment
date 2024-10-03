@@ -36,7 +36,7 @@ class Program
 
     static string LokasyonSecimi()
     {
-        string[] lokasyonlar = { "bodrum", "marmaris", "cesme" };
+        string[] lokasyonlar = { "bodrum", "marmaris", "çeşme" };
         string lokasyon = "";
 
         while (true)
