@@ -1,14 +1,14 @@
-Pratik - Ilk Metot Uygulamamiz: Verilen ornekleri c�zelim g�relim efendimmmmmm
+Pratik - Ilk Metot Uygulamamız: Verilen örnekleri çözelim görelim efendimmmmmm
 
-Ayni uygulama icerisinde 4 adet metot tanimlamaniz ve cagirmainiz isteniyor :
+Aynı uygulama içerisinde 4 adet metot tanimlamaniz ve çağırmanızı istiyor :
 
-Geriye Deger Dondurmeyen Bir void metot.
+Geriye Değer Döndürmeyen Bir void metot.
 
 Ekrana sevdiginiz bir sarki sozunu yazdirsin. 
 
-Geriye Tamsayi Donduren Bir metot
+Geriye Tamsayi Döndüren Bir metot
 
-Rastgele bir sayi uretip bu sayinin 2'ye bolumunden kalani geriye dondursun.
+Rastgele bir sayi uretip bu sayinin 2'ye bölümünden kalanı geriye döndürsün.
 
 Parametre Alan ve Geriye Deger Donduren Bir Metot
 
