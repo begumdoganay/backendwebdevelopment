@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Hata 1: Sınıf adı "BebekOyunAlani" olarak tanımlanmış, ancak kullanımda "Bebek" olarak geçiyor.
-// Düzeltme: Sınıf adını "Bebek" olarak değiştiriyoruz.
 public class Bebek
 {
     public DateTime DogumTarihi { get; private set; }
