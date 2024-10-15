@@ -1,5 +1,4 @@
-﻿
-// Açıklamalar:
+﻿// Açıklamalar:
 
 // 1. Araba Sınıfı:
 //    - Araba sınıfı, bir arabanın temel özelliklerini (Marka, Model, Renk, Kapı Sayısı) içeriyor.
