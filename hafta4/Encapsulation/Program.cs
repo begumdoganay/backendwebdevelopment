@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public class Car
 {
@@ -32,6 +32,11 @@ public class Car
         DoorCount = doorCount;
     }
 
+    public string CarInfo()
+    {
+        return $"This car is a {Color} {Brand} {Model} with {DoorCount} doors.";
+    }
+
     public override string ToString()
     {
         return $"Brand: {Brand}, Model: {Model}, Color: {Color}, Door Count: {DoorCount}";
@@ -45,13 +50,15 @@ class Program
         Console.WriteLine("Car Examples:");
 
         Car car1 = new Car("Toyota", "Corolla", "White", 4);
-        Console.WriteLine(car1);
+        Console.WriteLine("Car 1 ToString(): " + car1.ToString());
+        Console.WriteLine("Car 1 CarInfo(): " + car1.CarInfo());
 
         Car car2 = new Car("Porsche", "911", "Red", 2);
-        Console.WriteLine(car2);
+        Console.WriteLine("Car 2 ToString(): " + car2.ToString());
+        Console.WriteLine("Car 2 CarInfo(): " + car2.CarInfo());
 
         Car car3 = new Car("Honda", "Civic", "Blue", 3);
-        Console.WriteLine(car3);
+        Console.WriteLine("Car 3 ToString(): " + car3.ToString());
+        Console.WriteLine("Car 3 CarInfo(): " + car3.CarInfo());
     }
 }
-
