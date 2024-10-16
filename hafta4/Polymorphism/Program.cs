@@ -4,93 +4,92 @@ using System.Collections.Generic;
 namespace PolymorphismExample
 {
     // Tüm şekiller için soyut temel sınıf
-    // Soyut sınıf, temel özellikleri ve metotları belirler. Şeklin alanını hesaplama ve
-    // çizim işlemi her şekil için farklı olacağı için bunları abstract yapıyoruz.
     public abstract class Shape
     {
-        public abstract double CalculateArea(); // Alan hesaplama metodu
-        public abstract void Draw(); // Şekli çizme metodu
+        // Alan hesaplama metodu (Her şekil için farklı hesaplanacak)
+        public abstract double CalculateArea();
+
+        // Şekli çizme metodu (Her şekil için farklı çizilecek)
+        public abstract void Draw();
     }
 
-    // Daire sınıfı (Circle)
-    // Shape sınıfından miras alıyor ve daireye özel alan hesaplama ve çizim işlemleri yapılıyor.
+    // Daire sınıfı (Circle) - Shape sınıfından türetiliyor
     public class Circle : Shape
     {
         public double Radius { get; set; } // Dairenin yarıçapı
 
-        // Yapıcı (constructor), dairenin yarıçapını alır.
+        // Yapıcı metot (constructor), dairenin yarıçapını alır.
         public Circle(double radius)
         {
             Radius = radius;
         }
 
-        // Alan hesaplama: π * r^2 formülü ile hesaplanır.
+        // Alan hesaplama: π * r^2
         public override double CalculateArea()
         {
             return Math.PI * Radius * Radius;
         }
 
-        // Çizim işlemi (konsola yazdırma)
+        // Daireyi çiz (konsola yazdırma)
         public override void Draw()
         {
             Console.WriteLine($"Drawing a circle with radius {Radius}");
         }
     }
 
-    // Dikdörtgen sınıfı (Rectangle)
-    // Shape sınıfından miras alıyor ve dikdörtgene özel alan hesaplama ve çizim işlemleri yapılıyor.
+    // Dikdörtgen sınıfı (Rectangle) - Shape sınıfından türetiliyor
     public class Rectangle : Shape
     {
-        public double Width { get; set; } // Dikdörtgenin genişliği
-        public double Height { get; set; } // Dikdörtgenin yüksekliği
+        public double Width { get; set; } // Genişlik
+        public double Height { get; set; } // Yükseklik
 
-        // Yapıcı (constructor), dikdörtgenin genişlik ve yüksekliğini alır.
+        // Yapıcı metot, genişlik ve yüksekliği alır.
         public Rectangle(double width, double height)
         {
             Width = width;
             Height = height;
         }
 
-        // Alan hesaplama: genişlik * yükseklik formülü ile hesaplanır.
+        // Alan hesaplama: genişlik * yükseklik
         public override double CalculateArea()
         {
             return Width * Height;
         }
 
-        // Çizim işlemi (konsola yazdırma)
+        // Dikdörtgeni çiz (konsola yazdırma)
         public override void Draw()
         {
             Console.WriteLine($"Drawing a rectangle with width {Width} and height {Height}");
         }
     }
 
-    // Üçgen sınıfı (Triangle)
-    // Shape sınıfından miras alıyor ve üçgene özel alan hesaplama ve çizim işlemleri yapılıyor.
+    // Üçgen sınıfı (Triangle) - Shape sınıfından türetiliyor
     public class Triangle : Shape
     {
-        public double Base { get; set; } // Üçgenin tabanı
-        public double Height { get; set; } // Üçgenin yüksekliği
+        public double Base { get; set; } // Taban uzunluğu
+        public double Height { get; set; } // Yükseklik
 
-        // Yapıcı (constructor), üçgenin taban ve yüksekliğini alır.
-        public Triangle(double @base, double height) // @base: 'base' anahtar kelimesiyle çakışmayı önlemek için
+        // Yapıcı metot, taban ve yüksekliği alır.
+        public Triangle(double @base, double height) // 'base' anahtar kelimesi çakışmasını önlemek için @ kullanıyoruz
         {
             Base = @base;
             Height = height;
         }
 
-        // Alan hesaplama: (0.5 * taban * yükseklik) formülü ile hesaplanır.
+        // Alan hesaplama: (0.5 * taban * yükseklik)
         public override double CalculateArea()
         {
             return 0.5 * Base * Height;
         }
 
-        // Çizim işlemi (konsola yazdırma)
+        // Üçgeni çiz (konsola yazdırma)
         public override void Draw()
         {
             Console.WriteLine($"Drawing a triangle with base {Base} and height {Height}");
         }
     }
 
+    // Ana program
     class Program
     {
         static void Main(string[] args)
@@ -98,26 +97,26 @@ namespace PolymorphismExample
             // Şekilleri tutmak için bir liste oluşturuyoruz.
             List<Shape> shapes = new List<Shape>
             {
-                new Circle(5), // 5 birim yarıçaplı bir daire
-                new Rectangle(4, 6), // 4x6 boyutlarında bir dikdörtgen
-                new Triangle(3, 4) // 3 birim tabanlı ve 4 birim yüksekliğinde bir üçgen
+                new Circle(5),       // 5 birim yarıçaplı daire
+                new Rectangle(4, 6), // 4x6 boyutunda dikdörtgen
+                new Triangle(3, 4)   // 3 birim tabanlı ve 4 birim yüksekliğinde üçgen
             };
 
-            // Kullanıcıya hoş geldin mesajı
+            // Hoş geldiniz mesajı
             Console.WriteLine("Welcome to the Shape Gallery!");
             Console.WriteLine("Let's explore our shapes and their areas:\n");
 
-            // Tüm şekilleri döngü ile gezerek, her bir şekli çizdiriyoruz ve alanını hesaplıyoruz.
+            // Şekilleri döngüyle gezerek çizim ve alan hesaplama işlemi yapıyoruz.
             foreach (var shape in shapes)
             {
-                shape.Draw(); // Şekli çiz (konsola yazdırma)
-                Console.WriteLine($"Area: {shape.CalculateArea():F2}"); // Alanı hesapla ve 2 ondalık basamakla göster
+                shape.Draw(); // Şekli çizdir
+                Console.WriteLine($"Area: {shape.CalculateArea():F2}"); // Alanı hesapla ve 2 ondalık basamak göster
                 Console.WriteLine();
             }
 
-            // Programı kapatmadan önce kullanıcıdan bir tuşa basmasını istiyoruz.
+            // Çıkış için kullanıcıdan tuşa basmasını bekliyoruz.
             Console.WriteLine("Press any key to exit the Shape Gallery...");
-            Console.ReadKey(); // Kullanıcı herhangi bir tuşa basana kadar beklemesini sağlayalım.
+            Console.ReadKey();
         }
     }
 }
