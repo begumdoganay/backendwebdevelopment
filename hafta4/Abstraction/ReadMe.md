@@ -34,6 +34,7 @@ public abstract class Employee
     // Soyut metod, türetilmiş sınıflarda ezilecek
     public abstract void Gorev();
 }
+
 2. Türetilmiş Sınıflar
 Her türetilmiş sınıf, şirket içindeki farklı pozisyonları temsil eder (örneğin, Yazılım Geliştirici, Proje Yöneticisi, Satış Temsilcisi). Bu sınıflar, Çalışan soyut sınıfından türemiştir ve Gorev() metodunu ezerek her pozisyonun görevini belirler.
 
@@ -51,6 +52,7 @@ public class ProjectManager : Employee
         Console.WriteLine($"{Name} {Surname} şirketin Proje Yöneticisi olarak çalışıyor.");
     }
 }
+
 Örnek: Yazılım Geliştirici Sınıfı
 csharp
 Copy code
@@ -65,6 +67,7 @@ public class SoftwareDeveloper : Employee
         Console.WriteLine($"{Name} {Surname} şirketin Yazılım Geliştiricisi olarak çalışıyor.");
     }
 }
+
 Örnek: Satış Temsilcisi Sınıfı
 csharp
 Copy code
@@ -79,6 +82,7 @@ public class SalesRepresentative : Employee
         Console.WriteLine($"{Name} {Surname} şirketin Satış Temsilcisi olarak çalışıyor.");
     }
 }
+
 Program Akışı
 Program, farklı çalışan türlerinin örneklerini (Proje Yöneticisi, Yazılım Geliştirici, Satış Temsilcisi) oluşturur.
 Her çalışanın Gorev() metodu çağrılır ve bu metodun sonucunda ilgili pozisyonun görev tanımı konsola yazdırılır.
@@ -109,8 +113,9 @@ class Program
         Console.ReadKey();
     }
 }
+
 Örnek Çıktı:
-css
+CSS
 Copy code
 Hasan Çıldırmış şirketin Proje Yöneticisi olarak çalışıyor.
 Ahmet Yılmaz şirketin Yazılım Geliştiricisi olarak çalışıyor.
