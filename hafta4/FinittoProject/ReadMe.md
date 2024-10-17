@@ -1,160 +1,84 @@
-﻿💣 Hafta 4 - Kapanış Projesi
+💣 Hafta 4 - Kapanış Projesi
 Bu proje, bir teknoloji mağazasında Telefon ve Bilgisayar kayıtlarını almak için geliştirilmiş bir C# konsol uygulamasıdır. Aşağıdaki C# konularını öğrenmek ve pekiştirmek amacıyla tasarlanmıştır:
 
-Inheritance (Miras Alma): Temel sınıf olan BaseMakine'den miras alan Telefon ve Bilgisayar sınıfları.
-Encapsulation (Kapsülleme): Usb giriş sayısının doğrulanması gibi veri gizleme.
-Polymorphism (Çok Biçimlilik): Ürün bilgilerini yazdıran ve farklı sınıflarda ezilen (override) metotlar.
-Abstraction (Soyutlama): Ürün adı getiren soyut metot ile farklı sınıfların kendine özgü özelliklerini göstermek.
-📚 Proje Hakkında
-Bu proje, telefon ve bilgisayar üretim sürecini konsol ekranında simüle etmek için yapılmıştır. Kullanıcıdan alınan bilgilerle her iki tür cihaz için nesne üretilir ve bilgileri ekrana yazdırılır.
+🎯 Amaç
+Bu proje ile öğrenilen C# kavramları:
 
-🛠️ Kullanılan Konular
-Sınıflar arası miras (Inheritance)
-Kapsülleme (Encapsulation)
-Çok biçimlilik (Polymorphism)
-Soyut sınıflar ve metotlar (Abstraction)
-📝 Projenin İstenilen Görevleri
-1. Sınıf Yapısı
-📱 Telefon
-Üretim Tarihi: Otomatik atanır.
-Seri Numarası, Ad, Açıklama, İşletim Sistemi: Kullanıcıdan alınır.
-TR Lisanslı olup olmama: Kullanıcıdan alınır.
-💻 Bilgisayar
-Üretim Tarihi: Otomatik atanır.
-Seri Numarası, Ad, Açıklama, İşletim Sistemi: Kullanıcıdan alınır.
-Usb Giriş Sayısı: 2 veya 4 olabilir, aksi durumda uyarı verilir ve -1 atanır.
-Bluetooth olup olmama: Kullanıcıdan alınır.
-🏗️ BaseMakine (Temel Sınıf)
-BaseMakine sınıfı, Üretim Tarihi, Seri Numarası, Ad, Açıklama, İşletim Sistemi gibi ortak özelliklere sahiptir.
-Bir BilgileriYazdir() metodu içerir ve bu metot her sınıf tarafından ezilerek (override) kendi ek özelliklerini ekler.
-Ayrıca, UrunAdiGetir() adlı soyut bir metot bulunur. Bu metot, Telefon ve Bilgisayar sınıflarında ürün adlarını özelleştirir.
+Inheritance (Miras Alma)
+Encapsulation (Kapsülleme)
+Polymorphism (Çok Biçimlilik)
+Abstraction (Soyutlama)
+📝 Proje Açıklaması
+Bu projede, kullanıcıdan alınan bilgiler doğrultusunda Telefon ve Bilgisayar nesneleri oluşturulmakta ve bu ürünlerin bilgileri ekrana yazdırılmaktadır.
+
+Her iki cihazın da bazı ortak özellikleri ve kendilerine özgü özellikleri bulunmaktadır. BaseMakine adlı temel sınıftan türetilen Telefon ve Bilgisayar sınıflarında bu özellikler farklı şekillerde uygulanmıştır.
+
+📦 Sınıf Yapısı
+1. BaseMakine (Temel Sınıf)
+Ortak özellikleri içeren temel sınıftır. Tüm cihazlar bu sınıftan türetilir.
+Ortak Özellikler:
+
+Üretim Tarihi (Otomatik atanır)
+Seri Numarası
+Ad
+Açıklama
+İşletim Sistemi
+Metotlar:
+
+BilgileriYazdir(): Ürün bilgilerini ekrana yazdırır. Derived class'lar (Telefon ve Bilgisayar) bu metodu ezerek kendi özelliklerini ekler.
+UrunAdiGetir(): Soyut metot. Derived class'lar tarafından ezilerek ürün adını özelleştirir.
+2. Telefon
+Özellikler:
+
+TRLisansli: Türkiye lisanslı olup olmama durumu (boolean).
+Özelleştirilmiş Metotlar:
+
+BilgileriYazdir(): Telefon özelliklerini ekrana yazdırır.
+UrunAdiGetir(): "Telefonunuzun adı ---> ..." formatında konsol mesajı döner.
+3. Bilgisayar
+Özellikler:
+
+UsbGirisSayisi: 2 veya 4 olabilir. Aksi durumda uyarı mesajı verilir ve -1 değeri atanır.
+BluetoothVarMi: Bluetooth olup olmadığı (boolean).
+Özelleştirilmiş Metotlar:
+
+BilgileriYazdir(): Bilgisayar özelliklerini ekrana yazdırır.
+UrunAdiGetir(): "Bilgisayarınızın adı ---> ..." formatında konsol mesajı döner.
 🚀 Program Akışı
-Kullanıcıya, telefon üretmek için 1, bilgisayar üretmek için 2 tuşlarına basmasını söyler.
-Seçilen cihaza ait bilgileri kullanıcıdan alır:
+Kullanıcıya, telefon üretmek için 1, bilgisayar üretmek için 2 tuşlarına basması gerektiği söylenir.
+Seçilen cihaza ait özellikler kullanıcıdan istenir:
 Telefon için: Seri numarası, ad, açıklama, işletim sistemi ve TR lisanslı olup olmadığı.
-Bilgisayar için: Seri numarası, ad, açıklama, işletim sistemi, usb giriş sayısı ve bluetooth olup olmama durumu.
-Ürün başarıyla oluşturulduğunda, bilgilerini ekrana yazdırır.
-Kullanıcıya başka bir ürün üretmek isteyip istemediğini sorar.
-Kullanıcı "evet" derse, program başa döner. "Hayır" derse, uygulama "İyi günler!" mesajı ile sonlandırılır.
-💻 Kod Yapısı
-BaseMakine Sınıfı
-Bu sınıf, telefon ve bilgisayar için ortak olan özellikleri içerir. Her iki sınıf da bu sınıftan miras alır:
-
-csharp
-Copy code
-public abstract class BaseMakine
-{
-    public DateTime UretimTarihi { get; set; }
-    public string SeriNumarasi { get; set; }
-    public string Ad { get; set; }
-    public string Aciklama { get; set; }
-    public string IsletimSistemi { get; set; }
-
-    public BaseMakine(string seriNumarasi, string ad, string aciklama, string isletimSistemi)
-    {
-        UretimTarihi = DateTime.Now;
-        SeriNumarasi = seriNumarasi;
-        Ad = ad;
-        Aciklama = aciklama;
-        IsletimSistemi = isletimSistemi;
-    }
-
-    public virtual void BilgileriYazdir()
-    {
-        Console.WriteLine($"Ad: {Ad}, Seri Numarası: {SeriNumarasi}, İşletim Sistemi: {IsletimSistemi}, Üretim Tarihi: {UretimTarihi}");
-    }
-
-    public abstract string UrunAdiGetir();
-}
-Telefon ve Bilgisayar Sınıfları
-Her iki sınıf da BaseMakine sınıfından miras alır ve BilgileriYazdir() ile UrunAdiGetir() metodunu kendine özgü şekilde uygular.
-
-Telefon Sınıfı
-csharp
-Copy code
-public class Telefon : BaseMakine
-{
-    public bool TRLisansli { get; set; }
-
-    public Telefon(string seriNumarasi, string ad, string aciklama, string isletimSistemi, bool trLisansli)
-        : base(seriNumarasi, ad, aciklama, isletimSistemi)
-    {
-        TRLisansli = trLisansli;
-    }
-
-    public override void BilgileriYazdir()
-    {
-        base.BilgileriYazdir();
-        Console.WriteLine($"TR Lisanslı: {TRLisansli}");
-    }
-
-    public override string UrunAdiGetir()
-    {
-        return $"Telefonunuzun adı ---> {Ad}";
-    }
-}
-Bilgisayar Sınıfı
-csharp
-Copy code
-public class Bilgisayar : BaseMakine
-{
-    private int _usbGirisSayisi;
-    public bool BluetoothVarMi { get; set; }
-
-    public Bilgisayar(string seriNumarasi, string ad, string aciklama, string isletimSistemi, int usbGirisSayisi, bool bluetoothVarMi)
-        : base(seriNumarasi, ad, aciklama, isletimSistemi)
-    {
-        UsbGirisSayisi = usbGirisSayisi;
-        BluetoothVarMi = bluetoothVarMi;
-    }
-
-    public int UsbGirisSayisi
-    {
-        get => _usbGirisSayisi;
-        set
-        {
-            if (value == 2 || value == 4)
-            {
-                _usbGirisSayisi = value;
-            }
-            else
-            {
-                Console.WriteLine("Geçersiz USB Giriş Sayısı. 2 veya 4 olmalı.");
-                _usbGirisSayisi = -1;
-            }
-        }
-    }
-
-    public override void BilgileriYazdir()
-    {
-        base.BilgileriYazdir();
-        Console.WriteLine($"USB Giriş Sayısı: {UsbGirisSayisi}, Bluetooth: {BluetoothVarMi}");
-    }
-
-    public override string UrunAdiGetir()
-    {
-        return $"Bilgisayarınızın adı ---> {Ad}";
-    }
-}
+Bilgisayar için: Seri numarası, ad, açıklama, işletim sistemi, USB giriş sayısı ve Bluetooth olup olmadığı.
+Ürün başarıyla oluşturulduğunda, bilgileri ekrana yazdırılır.
+Kullanıcıya başka bir ürün üretmek isteyip istemediği sorulur.
+Kullanıcı "evet" derse, program tekrar başa döner. "hayır" derse, "İyi günler!" mesajı ile uygulama sonlandırılır.
 📊 Örnek Çıktılar
-Telefon üretimi:
-
+📱 Telefon Üretimi:
 yaml
 Copy code
-Telefon Adı: iPhone
-Seri Numarası: ABC123
-İşletim Sistemi: iOS
-Üretim Tarihi: 10/17/2024
+Telefon Adı: iPhone  
+Seri Numarası: ABC123  
+İşletim Sistemi: iOS  
+Üretim Tarihi: 17.10.2024  
 TR Lisanslı: Evet
-Bilgisayar üretimi:
-
+💻 Bilgisayar Üretimi:
 yaml
 Copy code
-Bilgisayar Adı: Lenovo
-Seri Numarası: XYZ456
-İşletim Sistemi: Windows
-Üretim Tarihi: 10/17/2024
-USB Giriş Sayısı: 2
+Bilgisayar Adı: Lenovo  
+Seri Numarası: XYZ456  
+İşletim Sistemi: Windows  
+Üretim Tarihi: 17.10.2024  
+USB Giriş Sayısı: 2  
 Bluetooth: Var
 🔄 Tekrar Ürün Üretme
-Programda, kullanıcıya tekrar başka bir ürün üretmek isteyip istemediği sorulur. "Evet" yanıtı verildiğinde döngü başa döner, "Hayır" denildiğinde ise program sonlandırılır.
+Programda, kullanıcıya tekrar başka bir ürün üretmek isteyip istemediği sorulur.
+
+"Evet" yanıtı verildiğinde döngü başa döner ve yeni ürün üretimi başlar.
+"Hayır" yanıtı verildiğinde program "İyi günler!" mesajı ile sonlandırılır.
+🧑‍💻 Kullanılan Teknolojiler
+C#
+.NET Framework
+Konsol Uygulaması
+💡 Geliştirici Notları
+Bu proje, temel OOP kavramlarını öğretmek ve pekiştirmek amacıyla tasarlanmıştır. Programın daha fazla özellik kazanması veya GUI tabanlı hale getirilmesi mümkündür.
+
