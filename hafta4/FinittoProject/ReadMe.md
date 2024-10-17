@@ -14,6 +14,7 @@ Bu projede, kullanıcıdan alınan bilgiler doğrultusunda Telefon ve Bilgisayar
 Her iki cihazın da bazı ortak özellikleri ve kendilerine özgü özellikleri bulunmaktadır. BaseMakine adlı temel sınıftan türetilen Telefon ve Bilgisayar sınıflarında bu özellikler farklı şekillerde uygulanmıştır.
 
 📦 Sınıf Yapısı
+
 1. BaseMakine (Temel Sınıf)
 Ortak özellikleri içeren temel sınıftır. Tüm cihazlar bu sınıftan türetilir.
 Ortak Özellikler:
@@ -34,7 +35,9 @@ TRLisansli: Türkiye lisanslı olup olmama durumu (boolean).
 Özelleştirilmiş Metotlar:
 
 BilgileriYazdir(): Telefon özelliklerini ekrana yazdırır.
+
 UrunAdiGetir(): "Telefonunuzun adı ---> ..." formatında konsol mesajı döner.
+
 3. Bilgisayar
 Özellikler:
 
@@ -44,6 +47,7 @@ BluetoothVarMi: Bluetooth olup olmadığı (boolean).
 
 BilgileriYazdir(): Bilgisayar özelliklerini ekrana yazdırır.
 UrunAdiGetir(): "Bilgisayarınızın adı ---> ..." formatında konsol mesajı döner.
+
 🚀 Program Akışı
 Kullanıcıya, telefon üretmek için 1, bilgisayar üretmek için 2 tuşlarına basması gerektiği söylenir.
 Seçilen cihaza ait özellikler kullanıcıdan istenir:
