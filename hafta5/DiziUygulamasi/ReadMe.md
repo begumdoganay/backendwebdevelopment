@@ -129,6 +129,7 @@ class Program
         }
     }
 }
+
 🎉 Conclusion
 This week's practice provided hands-on experience with arrays, loops, and user input in C#. The program effectively demonstrates the ability to manage a collection of integers and perform operations such as sorting and resizing.
  
