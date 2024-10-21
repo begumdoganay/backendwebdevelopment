@@ -5,14 +5,14 @@ Bu uygulama, kullanıcıdan konsoldan gireceği 5 farklı kahve ismi ile bir lis
 # Kahve Menüsü Uygulaması
 
 ## İçindekiler
-1. [Proje Hakkında](#proje-hakkında)
-2. [Özellikler](#özellikler)
-3. [Kurulum](#kurulum)
-4. [Kullanım](#kullanım)
-5. [Örnek Çıktı](#örnek-çıktı)
-6. [Teknik Detaylar](#teknik-detaylar)
-7. [Katkıda Bulunma](#katkıda-bulunma)
-8. [Lisans](#lisans)
+1. [Proje Hakkında] (#proje-hakkında)
+2. [Özellikler] (#özellikler)
+3. [Kurulum] (#kurulum)
+4. [Kullanım] (#kullanım)
+5. [Örnek Çıktı] (#örnek-çıktı)
+6. [Teknik Detaylar] (#teknik-detaylar)
+7. [Katkıda Bulunma] (#katkıda-bulunma)
+8. [Lisans] (#lisans)
 
 ## Proje Hakkında
 
