@@ -2,90 +2,62 @@
 Bir Kahve İçsek Bize İyi Gelecek!
 Bu uygulama, kullanıcıdan konsoldan gireceği 5 farklı kahve ismi ile bir liste oluşturarak, bu listeyi ekrana yazdırmayı amaçlamaktadır. Kahve tutkunları için hazırlandığı bu program, kullanıcı etkileşimi ile kahve çeşitlerini kaydeder ve gösterir.
 
-İçindekiler: 
-Amaç
-Kullanım
-Örnek Veri Girişi
-Örnek Program Çıktısı
-Teknik Bilgiler
-Amaç
-Bu uygulama, kullanıcıların farklı kahve çeşitlerini kolayca kaydedebileceği ve görüntüleyebileceği bir programdır. Kullanıcıdan alınan girdi ile oluşturulan liste, kullanıcı deneyimini artırmayı hedefler.
+# Kahve Menüsü Uygulaması
 
-Kullanım
-Uygulamayı çalıştırın.
-Konsolda sizden istenen 5 kahve ismini girin.
-Tüm kahve çeşitleri ekranda listelenecektir.
+## İçindekiler
+1. [Proje Hakkında](#proje-hakkında)
+2. [Özellikler](#özellikler)
+3. [Kurulum](#kurulum)
+4. [Kullanım](#kullanım)
+5. [Örnek Çıktı](#örnek-çıktı)
+6. [Teknik Detaylar](#teknik-detaylar)
+7. [Katkıda Bulunma](#katkıda-bulunma)
+8. [Lisans](#lisans)
 
+## Proje Hakkında
 
-Bir kahve çeşidi girin (1): Espresso
-Bir kahve çeşidi girin (2): Cappuccino
-Bir kahve çeşidi girin (3): Latte
-Bir kahve çeşidi girin (4): Americano
-Bir kahve çeşidi girin (5): Mocha
+"Bir Kahve İçsek Bize İyi Gelecek!" uygulaması, kahve tutkunları için tasarlanmış interaktif bir C# konsol programıdır. Bu uygulama, kullanıcıların kendi kahve menülerini oluşturmalarına ve görüntülemelerine olanak tanır.
 
+## Özellikler
 
+- Kullanıcıdan 5 farklı kahve çeşidi girişi alma
+- Girilen kahve isimlerini bir listede saklama
+- Oluşturulan kahve menüsünü konsola yazdırma
+- Boş girişlere karşı hata kontrolü
 
-﻿using System;
-using System.Collections.Generic;
+## Kurulum
 
-public class PraticOfList2
-{
-    // Kahve menüsü oluşturur
-    public static List<string> CreateCoffeeMenu(int numberOfCoffees)
-    {
-        List<string> coffeeNames = new List<string>(); // Liste oluşturuldu, devammm 
+1. Bu projeyi klonlayın:
+   ```
+   git clone https://github.com/kullaniciadi/kahve-menu-uygulamasi.git
+   ```
+2. Proje dizinine gidin:
+   ```
+   cd kahve-menu-uygulamasi
+   ```
+3. Projeyi derleyin:
+   ```
+   dotnet build
+   ```
 
-        for (int i = 0; i < numberOfCoffees; i++) // Kullanıcıdan belirli sayıda girdi al
-        {
-            string coffee = GetCoffeeName(i + 1); // Girdi al
-            coffeeNames.Add(coffee); // Girdiyi listeye ekle
-        }
+## Kullanım
 
-        return coffeeNames; // Listeyi döndür
-    }
+1. Uygulamayı çalıştırın:
+   ```
+   dotnet run
+   ```
+2. Konsol ekranında beliren yönergeleri takip edin.
+3. İstenilen 5 kahve çeşidini sırayla girin.
+4. Girdiğiniz kahvelerden oluşan menüyü görüntüleyin.
 
-    // Kullanıcıdan kahve adı alır
-    private static string GetCoffeeName(int index)
-    {
-        Console.Write($"Bir kahve çeşidi girin (#{index}): ");
-        string coffeeName = Console.ReadLine()?.Trim(); // Girdiyi al ve boşlukları temizle, hatalı sonuç almasını önle 
+## Örnek Çıktı
 
-        // Boş girdi kontrolü
-        while (string.IsNullOrEmpty(coffeeName))
-        {
-            Console.WriteLine("Kahve adı boş olamaz. Lütfen tekrar girin.");
-            Console.Write($"Bir kahve çeşidi girin (#{index}): ");
-            coffeeName = Console.ReadLine()?.Trim(); // Tekrar girdi al
-        }
-
-        return coffeeName; // Geçerli kahve adını sisteme dahil et ve döndürrr
-    }
-
-    // Kahve menüsünü ekrana yazdırır
-    public static void DisplayCoffeeMenu(List<string> menu)
-    {
-        if (menu.Count == 0)
-        {
-            Console.WriteLine("Menüde kahve yok.");
-            return;
-        }
-
-        Console.WriteLine("Kahve Menüsü:");
-        foreach (string coffee in menu)
-        {
-            Console.WriteLine($"===>>> {coffee}");
-        }
-    }
-
-    public static void Main(string[] args)
-    {
-        const int numberOfCoffees = 5; // Kullanıcıdan alınacak kahve sayısı
-        List<string> menuCoffee = CreateCoffeeMenu(numberOfCoffees); // Liste oluşturuldu
-        DisplayCoffeeMenu(menuCoffee); // Liste okundu
-        Console.ReadKey();
-    }
-   
-}
+```
+Bir kahve çeşidi girin (#1): Espresso
+Bir kahve çeşidi girin (#2): Cappuccino
+Bir kahve çeşidi girin (#3): Latte
+Bir kahve çeşidi girin (#4): Americano
+Bir kahve çeşidi girin (#5): Mocha
 
 Kahve Menüsü:
 ===>>> Espresso
@@ -93,10 +65,32 @@ Kahve Menüsü:
 ===>>> Latte
 ===>>> Americano
 ===>>> Mocha
-Teknik Bilgiler
-Programlama Dili: C#
-Kütüphaneler: System, System.Collections.Generic
-Kullanıcı Girdisi: Console.ReadLine()
-Döngüler: for, foreach
-Hata Kontrolü: Boş giriş kontrolü
-Bu program, kullanıcıların kahve çeşitlerini kaydetmesine ve görüntülemesine yardımcı olurken, C# dilindeki temel listeler ve döngüler hakkında pratik yapma fırsatı sunar. Kahve severler için harika bir başlangıç! ☕️
+```
+
+## Teknik Detaylar
+
+- **Programlama Dili**: C#
+- **Hedef Framework**: .NET Core 3.1 / .NET 5.0+
+- **Kullanılan Kütüphaneler**: 
+  - System
+  - System.Collections.Generic
+- **Veri Yapıları**: List<string>
+- **Kullanıcı Girişi**: Console.ReadLine()
+- **Döngüler**: for, foreach
+- **Hata Kontrolü**: Boş giriş kontrolü
+
+## Katkıda Bulunma
+
+1. Bu projeyi fork edin
+2. Yeni bir özellik dalı oluşturun (`git checkout -b yeni-ozellik`)
+3. Değişikliklerinizi commit edin (`git commit -am 'Yeni özellik: Özet'`)
+4. Dalınıza push yapın (`git push origin yeni-ozellik`)
+5. Bir Pull Request oluşturun
+
+## Lisans
+
+Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır. Detaylar için LICENSE dosyasını inceleyebilirsiniz.
+
+
+Geliştirici: Begüm DOĞANAY
+İletişim: begum.doganay@icloud.com
