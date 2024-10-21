@@ -1,11 +1,11 @@
 ﻿Hafta 5 - IMDB Film Listesi Uygulaması 🎬
 📽️ Proje Hakkında
-Yo! Bu proje, Hafta 5'te öğrendiğimiz C# becerilerini kullanarak yapılmış süper cool bir IMDB Film Listesi uygulaması. Kullanıcıdan film adları ve IMDB puanları alıp, bunları listeliyor ve filtreliyor. Yani, kendi mini IMDB'ni yaratıyorsun!
+Selamlar selamlar! Bu proje, Hafta 5'te öğrendiğimiz C# becerilerini kullanarak yaptığım bir IMDB Film Listesi uygulaması. Kullanıcıdan film adları ve IMDB puanları alıp, bunları listeliyor ve filtreliyor. Yani, kendi mini IMDB'ni yaratıyorsun!
 🍿 Özellikler
 
-Sınırsız sayıda film ekleyebilirsin (tabii bilgisayarın patlayana kadar 😅)
-Her filme bir isim ve IMDB puanı verebilirsin
-Tüm filmleri listeleyebilirsin
+Sınırsız sayıda film ekleyebilirsin (tabii Sinefilliğin devam ettiği kadar 😅)
+Her filme bir isim ve IMDB puanı verebilirsin.
+Tüm filmleri listeleyebilirsin.
 4-9 arası IMDB puanı olan "fena değil ya" filmlerini görebilirsin
 "A" harfiyle başlayan filmleri bulabilirsin (çünkü neden olmasın?)
 
