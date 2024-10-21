@@ -1,30 +1,28 @@
-﻿Car Production Program
+Car Production Program
 Overview
-This program simulates a car production system where users can create car objects with specified attributes. It prompts the user to enter details about the car, including its serial number, brand, model, color, and number of doors. The program maintains a list of produced cars and displays their details upon completion.
+This program simulates a car production system where users can create car objects with specified attributes. It prompts the user to enter details about the car, including its serial number, brand, model, color, and number of doors.
 
 Features
-User Input: The program interacts with the user to gather information about cars.
-Automatic Production Date: The production date is automatically set to the current date and time when a car is created.
-Input Validation: Ensures that the number of doors is a valid positive integer.
-Repeatable Process: Users can continue to produce cars or exit the program at any time.
-Summary Display: At the end, the program displays the serial numbers and brands of all produced cars.
+User Input: Interacts with users to gather car information.
+Automatic Production Date: Sets the production date to the current time.
+Input Validation: Ensures the number of doors is a valid positive integer.
+Repeatable Process: Users can produce multiple cars or exit at any time.
+Summary Display: Shows the serial numbers and brands of all produced cars.
 Requirements
-.NET framework or a compatible C# environment to run the program.
+.NET framework or any compatible C# environment.
 Program Flow
-The program prompts the user to decide whether they want to produce a car (input 'e' for yes, 'h' for no). It is case insensitive.
-If the user opts to exit, the program ends.
-If the user chooses to produce a car, they are prompted to enter the following details:
+User Prompt: Asks if the user wants to produce a car (input 'e' for yes, 'h' for no). Case insensitive.
+Exit Option: If the user chooses 'h', the program ends.
+Car Details: If 'e', prompts for:
 Serial Number
 Brand
 Model
 Color
 Number of Doors
-The production date is automatically set at the time of car creation.
-Input for the number of doors is validated to ensure it is a positive integer. If invalid, an error message is displayed, and the user is prompted again.
-The created car object is added to a list of cars.
-The user is then asked if they want to produce another car. If yes, the process repeats; if no, the program displays the serial numbers and brands of all produced cars.
-Example Usage
-plaintext
+Production Date: Automatically recorded at creation.
+Input Validation: Validates door count; prompts again if invalid.
+List of Cars: Adds created car objects to a list.
+Repeat or Exit: Asks if the user wants to produce another car. If yes, repeats; if no, displays details of all produced cars
 
 Copy
 Do you want to produce a car? (Y/N): Y
