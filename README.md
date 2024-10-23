@@ -1,5 +1,6 @@
 👋 Merhaba, Ben Begüm Doğanay!
 Full-Stack Developer yolculuğunda ilerleyen tutkulu bir yazılım öğrencisiyim. Bu repo, öğrenme sürecimi ve projelerimi haftalık olarak dokümante ettiğim dijital günlüğümdür.
+
 🎯 Hedeflerim
 
 Full-Stack Development alanında uzmanlaşmak
@@ -22,6 +23,7 @@ Copy/Hafta-X
     ├── Notlar/
     ├── Ödevler/
     └── README.md (haftalık özet)
+    
 🛠 Teknik Yetenekler
 Frontend
 Show Image
@@ -36,6 +38,7 @@ Show Image
 Show Image
 📊 GitHub İstatistiklerim
 Show Image
+
 📫 İletişim
 
 LinkedIn: Begüm Doğanay
