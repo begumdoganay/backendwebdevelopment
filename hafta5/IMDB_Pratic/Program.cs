@@ -27,14 +27,14 @@ namespace IMDB_Pratic
 
             while (true)
             {
-                // Kullanıcıdan film adını sızdırıyoruz 😏
+                // Kullanıcıdan film adını sinsice öğreniyoruz 😏
                 Console.Write("Hangi filmi ekleyelim? ");
                 string filmAdi = Console.ReadLine();
 
                 double imdbPuani;
                 while (true)
                 {
-                    // IMDB puanını öğrenme zamanı! Bakalım film ne kadar cool? 🆒
+                    // IMDB puanını öğrenme zamanı! Bakalım film ne kadar geçer not alıyor? 🆒
                     Console.Write("Bu film kaç yıldız alır? (IMDB puanı yani, abartma): ");
                     if (double.TryParse(Console.ReadLine(), out imdbPuani))
                     {
