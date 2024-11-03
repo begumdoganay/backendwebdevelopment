@@ -44,7 +44,7 @@ class Artist
             }
             Console.WriteLine();
 
-            // 2. Artists with album sales over 10 million
+            // 2. Artists with album sales of over 10 million
             Console.WriteLine("💿 Albüm satışları 10 milyon'un üzerinde olan şarkıcılar:");
             var highSales = artists.Where(a => a.AlbumSales >= 10000000);
             foreach (var artist in highSales)
@@ -53,7 +53,7 @@ class Artist
             }
             Console.WriteLine();
 
-            // 3. Pre-2000 pop artists, sorted alphabetically
+            // 3. Pre-2000 pop artists sorted alphabetically
             Console.WriteLine("🎵 2000 yılı öncesi çıkış yapmış ve pop müzik yapan şarkıcılar (alfabetik):");
             var pre2000Pop = artists
                 .Where(a => a.ReleaseYear < 2000 && a.MusicType.Contains("Pop"))
