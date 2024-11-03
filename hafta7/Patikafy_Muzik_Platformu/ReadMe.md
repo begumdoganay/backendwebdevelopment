@@ -1,6 +1,6 @@
 ﻿Week 7 - Turkish Music Platform Analysis 🎵
 Project Description
-This week's project focuses on analyzing a Turkish music platform's data using LINQ operations in C#. We've created a sophisticated program that processes and analyzes information about famous Turkish musicians, their genres, debut years, and album sales.
+This week's project analyzes data on a Turkish music platform using LINQ operations in C#. We've created a sophisticated program that processes and analyzes information about famous Turkish musicians, their genres, debut years, and album sales.
 Learning Objectives 📚
 
 Advanced LINQ operations
@@ -68,9 +68,9 @@ csharpCopyusing System;
 using System.Collections.Generic;
 using System.Linq;
 
-/// <summary>
-/// Represents a musical artist with their career details
-/// </summary>
+
+// Represents a musical artist with their career details
+
 class Artist
 {
     public string Name { get; set; }
@@ -98,9 +98,9 @@ class Program
         PerformAnalyses(artists);
     }
 
-    /// <summary>
-    /// Initializes the database with Turkish music artists
-    /// </summary>
+
+    // Initializes the database with Turkish music artists
+
     private static List<Artist> InitializeArtistDatabase()
     {
         return new List<Artist>
@@ -112,7 +112,7 @@ class Program
     }
 
     // ... rest of the implementation
-}
+
 Key LINQ Operations Used 🔍
 
 Where() for filtering data
