@@ -93,7 +93,7 @@ class Program
         Console.WriteLine("🎯 Grand Finale: Squares of Numbers (Self-multiplication party):");
         Console.WriteLine(string.Join(", ", squares));
     }
-}
+
 Tips 💡
 
 Try modifying the range of random numbers
