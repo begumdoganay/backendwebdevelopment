@@ -72,7 +72,7 @@ using System.Linq;
 
 // Represents a musical artist with their career details
 
-
+If you'd like to review my code, I'm leaving it below.
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -108,7 +108,6 @@ class Program
             new Artist { Name = "Gülben Ergen", MusicType = "Pop / Türk Halk Müziği", ReleaseYear = 1997, AlbumSales = 10000000 },
             new Artist { Name = "Neşet Ertaş", MusicType = "Türk Halk Müziği / Türk Sanat Müziği", ReleaseYear = 1960, AlbumSales = 2000000 }
         };
-        If you'd like to review my code, I'm leaving it below.
         
         // 1. Artists whose names start with 'S'
         Console.WriteLine("🎤 Adı 'S' ile başlayan şarkıcılar:");
