@@ -1,4 +1,5 @@
 ﻿Week 7 - Turkish Music Platform Analysis 🎵
+ 
 Project Description
 This week's project analyzes data on a Turkish music platform using LINQ operations in C#. We've created a sophisticated program that processes and analyzes information about famous Turkish musicians, their genres, debut years, and album sales.
 Learning Objectives 📚
