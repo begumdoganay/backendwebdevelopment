@@ -1,0 +1,49 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="welcome-section">
+        <h1 class="display-4">@Model.WelcomeMessage</h1>
+        <p class="lead">Current time: @Model.CurrentTime.ToString("f")</p>
+    </div>
+
+    <div class="featured-section">
+        <h2>Featured Items</h2>
+        <div class="row">
+            @foreach (var item in Model.FeaturedItems)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">@item</h5>
+                            <p class="card-text">Sample description for @item</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Client-side validation and interactivity
+        $(document).ready(function() {
+            console.log("Home page loaded");
+
+            // Add smooth scrolling
+            $('a[href^="#"]').on('click', function(event) {
+                event.preventDefault();
+                var target = $(this.getAttribute('href'));
+                if(target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 100
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+}
