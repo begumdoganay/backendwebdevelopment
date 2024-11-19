@@ -1,0 +1,10 @@
+﻿[*.cs]
+
+# CA1051: Görünür örnek alanlarını bildirmeyin
+dotnet_diagnostic.CA1051.severity = none
+
+# IDE0290: Birincil oluşturucuyu kullan
+csharp_style_prefer_primary_constructors = true
+
+# IDE0008: Açık tür kullanma
+dotnet_diagnostic.IDE0008.severity = silent

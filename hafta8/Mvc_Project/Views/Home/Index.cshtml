@@ -1,0 +1,85 @@
+﻿@* Views/CustomerOrders/Index.cshtml *@
+@model Week8_2_MVCProject.ViewModels.CustomerOrderViewModel
+
+<div class="container my-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h2>Müşteri ve Sipariş Bilgileri</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <!-- Müşteri Bilgileri -->
+                <div class="col-lg-6 mb-4">
+                    <h3 class="text-primary">Müşteri Bilgileri</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Müşteri ID</th>
+                                <td>@Model.Customer.Id</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Ad Soyad</th>
+                                <td>@Model.Customer.GetFullName()</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">E-posta</th>
+                                <td>@Model.Customer.Email</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Sipariş İstatistikleri -->
+                <div class="col-lg-6 mb-4">
+                    <h3 class="text-primary">Sipariş İstatistikleri</h3>
+                    <div class="alert alert-info">
+                        <p><strong>Toplam Sipariş Sayısı:</strong> @Model.TotalOrderCount</p>
+                        <p><strong>Toplam Sipariş Tutarı:</strong> @Model.TotalOrderAmount.ToString("C2")</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sipariş Listesi -->
+            <h3 class="text-primary mt-4">Sipariş Listesi</h3>
+            <table class="table table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Sipariş ID</th>
+                        <th scope="col">Ürün Adı</th>
+                        <th scope="col">Birim Fiyat</th>
+                        <th scope="col">Miktar</th>
+                        <th scope="col">Toplam Tutar</th>
+                        <th scope="col">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Orders != null && Model.Orders.Any())
+                    {
+                        foreach (var order in Model.Orders)
+                        {
+                            <tr>
+                                <td>@order.Id</td>
+                                <td>@order.ProductName</td>
+                                <td>@order.Price.ToString("C2")</td>
+                                <td>@order.Quantity</td>
+                                <td>@order.TotalAmount.ToString("C2")</td>
+                                <td>
+                                    <a asp-action="OrderDetails"
+                                       asp-route-orderId="@order.Id"
+                                       class="btn btn-sm btn-info text-white">
+                                        <i class="bi bi-info-circle"></i> Detay
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6" class="text-center text-muted">Sipariş bulunamadı.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
