@@ -1,0 +1,61 @@
+﻿@model MVCofProject.Models.Book
+@{
+    var authorList=ViewData["AuthorList"] as List<Author>;
+
+
+    <h1>Yeni Kitap</h1>
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label"></label>
+            <input asp-for="Title" class="form-control">
+            <div class="form-text text-danger">
+                <span asp-validation-for="Title"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label asp-for="PublishDate" class="form-label"></label>
+            <input asp-for="PublishDate" class="form-control">
+            <div class="form-text text-danger">
+                <span asp-validation-for="PublishDate"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Genre" class="form-label"></label>
+            <input asp-for="Genre" class="form-control">
+            <div class="form-text text-danger">
+                <span asp-validation-for="Genre"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CopiesAvailable" class="form-label"></label>
+            <input asp-for="CopiesAvailable" class="form-control">
+            <div class="form-text text-danger">
+                <span asp-validation-for="CopiesAvailable"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Isbn" class="form-label"></label>
+            <input asp-for="Isbn" class="form-control">
+            <div class="form-text text-danger">
+                <span asp-validation-for="Isbn"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="AuthorId" class="form-label"></label>
+            <select asp-for="AuthorId"  class="form-select">
+                @foreach (var author in authorList)
+                {
+                    <option value=@author.Id selected>@author.FirstName</option>
+                }
+            </select>
+            <div class="form-text text-danger">
+                <span asp-validation-for="AuthorId"></span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+        <a class="btn btn-secondary" asp-action="Create">Vazgeç</a>
+    </form>
+}

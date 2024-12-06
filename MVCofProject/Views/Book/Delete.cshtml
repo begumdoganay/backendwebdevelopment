@@ -1,0 +1,14 @@
+﻿@model Book
+
+<h2>Kitap Sil</h2>
+<p>Bu kitabı silmek istediğinize emin misiniz?</p>
+<div>
+    <p><strong>Başlık:</strong> @Model.Title</p>
+    <p><strong>Tür:</strong> @Model.Genre</p>
+</div>
+
+@using (Html.BeginForm("DeleteConfirmed", "Book", new { id = Model.Id }, FormMethod.Post))
+{
+    <button type="submit" class="btn btn-danger">Sil</button>
+}
+@Html.ActionLink("Geri Dön", "Index", null, new { @class = "btn btn-secondary" })

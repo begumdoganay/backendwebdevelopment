@@ -1,0 +1,47 @@
+﻿@model MVCofProject.Models.Author
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center" style="color: #4A4A4A; font-family: 'Arial', sans-serif;">Edit Author</h1>
+
+<h4 class="text-center" style="color: #6C757D; font-family: 'Arial', sans-serif;">Author Details</h4>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Edit" class="bg-light p-4 rounded shadow-sm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label" style="color: #6C757D;"></label>
+                <input asp-for="FirstName" class="form-control" style="border: 1px solid #CED4DA; border-radius: 0.25rem; background-color: #F8F9FA;" placeholder="Enter First Name" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label" style="color: #6C757D;"></label>
+                <input asp-for="LastName" class="form-control" style="border: 1px solid #CED4DA; border-radius: 0.25rem; background-color: #F8F9FA;" placeholder="Enter Last Name" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthTime" class="control-label" style="color: #6C757D;"></label>
+                <input asp-for="BirthTime" class="form-control" style="border: 1px solid #CED4DA; border-radius: 0.25rem; background-color: #F8F9FA;" placeholder="Select Date of Birth" type="date" />
+                <span asp-validation-for="BirthTime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" value="Save" class="btn btn-primary" style="background-color: #5A6268; border-color: #5A6268; border-radius: 0.25rem; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#6C757D'" onmouseout="this.style.backgroundColor='#5A6268'" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-link" style="color: #007BFF;">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
