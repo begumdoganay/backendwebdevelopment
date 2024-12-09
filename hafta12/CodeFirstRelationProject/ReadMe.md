@@ -1,148 +1,76 @@
-﻿Week 12 - Entity Framework Core Code First Relations
-This project demonstrates the implementation of database relationships using Entity Framework Core's Code First approach. It creates a simple blog-like database structure with users and their posts.
-Project Structure
-Database Schema
+📚 Patika BootCamp - Code First Relation Project
+Hello! I am Begüm Doğanay. In the 12th week of the Patika BootCamp, we explored the topic of creating a database and designing relationships using the Code First approach. This project demonstrates how to create a relational database using Entity Framework Core. Throughout the project, we focused on establishing a relationship between two tables: Users and Posts. 🚀
 
-Users Table
-
-Id (int): Primary key, auto-increment
-Username (string): User's username
-Email (string): User's email address
-
-
-Posts Table
-
-Id (int): Primary key, auto-increment
-Title (string): Post title
-Content (string): Post content
-UserId (int): Foreign key referencing Users table
-
-
-
-Relationships
-
-One-to-Many relationship between User and Post
-One User can have multiple Posts
-Each Post belongs to exactly one User
-
-Implementation Details
-Entity Classes
-csharpCopypublic class User
-{
-    public int Id { get; set; }
-    public string Username { get; set; }
-    public string Email { get; set; }
-    public ICollection<Post> Posts { get; set; }
-}
-
-public class Post
-{
-    public int Id { get; set; }
-    public string Title { get; set; }
-    public string Content { get; set; }
-    public int UserId { get; set; }
-    public User User { get; set; }
-}
-Database Context
-csharpCopypublic class PatikaSecondDbContext : DbContext
-{
-    public DbSet<User> Users { get; set; }
-    public DbSet<Post> Posts { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlServer("Server=.;Database=PatikaCodeFirstDb2;Trusted_Connection=True;TrustServerCertificate=True;");
-    }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<User>()
-            .HasMany(u => u.Posts)
-            .WithOne(p => p.User)
-            .HasForeignKey(p => p.UserId);
-    }
-}
-Setup Instructions
-
-Install Required Packages:
-CopyInstall-Package Microsoft.EntityFrameworkCore.SqlServer
-Install-Package Microsoft.EntityFrameworkCore.Tools
-
-Run Migrations:
-CopyAdd-Migration InitialCreate
-Update-Database
-
-
-Key Features
-
-Code First Approach
-
-Database schema is defined using C# classes
-Relationships are configured using Fluent API
-Automatic database creation and updates
-
-
-Data Annotations
-
-Primary keys are defined
-Navigation properties for relationships
-Foreign key constraints
-
-
-Entity Framework Features
-
-Automatic key generation
-Relationship navigation
-Database context configuration
-
-
-
-Usage Example
-csharpCopyusing (var context = new PatikaSecondDbContext())
-{
-    // Create a new user
-    var user = new User 
-    { 
-        Username = "johndoe", 
-        Email = "john@example.com" 
-    };
-    
-    // Add user to database
-    context.Users.Add(user);
-    context.SaveChanges();
-
-    // Create a post for the user
-    var post = new Post
-    {
-        Title = "My First Post",
-        Content = "Hello World!",
-        UserId = user.Id
-    };
-    
-    // Add post to database
-    context.Posts.Add(post);
-    context.SaveChanges();
-}
-Database Configuration
+🗂️ About the Project
+This project showcases the Code First approach, allowing you to define and manage database tables directly through C# classes. Entity Framework Core maps these classes to relational database tables, enabling developers to concentrate on application logic without manually writing SQL scripts.
 
 Database Name: PatikaCodeFirstDb2
 Tables:
 
-Users
-Posts
+Users Table 🙍‍♀️
+Posts Table 📝
+There is a one-to-many relationship between these tables:
 
+A single user can have multiple posts.
+Each post belongs to only one user.
+🛠️ Database Tables
+🙍‍♀️ Users Table
+This table stores user details and includes the following columns:
 
-Context Class: PatikaSecondDbContext
+Column	Type	Description
+Id	int	Primary Key, Auto-Incremented
+Username	string	User's unique username
+Email	string	User's email address
+📝 Posts Table
+This table stores posts created by users and includes the following columns:
 
-Notes
+Column	Type	Description
+Id	int	Primary Key, Auto-Incremented
+Title	string	Post title
+Content	string	Post content
+UserId	int	Foreign Key linked to the Users table
+📂 Context Class
+The DbContext class manages all database interactions:
 
-Ensure SQL Server is installed and running
-Check connection string matches your SQL Server instance
-Make sure you have necessary permissions to create database
-Run migrations before using the application
+Name: PatikaSecondDbContext
+Tables:
+DbSet<User> Users
+DbSet<Post> Posts
+Additionally, the relationship between Users and Posts tables is defined using Fluent API or Data Annotations.
 
-Additional Resources
+🔗 Getting Started
+Follow these steps to set up and run this project:
 
-Entity Framework Core Documentation
-Code First Approach Guide
-Relationships in EF Core
+Install Required Packages
+Install the necessary NuGet packages for Entity Framework Core:
+
+bash
+Copy code
+dotnet add package Microsoft.EntityFrameworkCore  
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer  
+Add a Migration
+Define the database schema by adding a migration:
+
+bash
+Copy code
+dotnet ef migrations add InitialCreate  
+Update the Database
+Apply the migration to create the database:
+
+bash
+Copy code
+dotnet ef database update  
+🎉 Congratulations! Your database PatikaCodeFirstDb2 with the Users and Posts tables is ready to use!
+
+📝 Notes
+Ensure your connection string is properly set in the appsettings.json file or another configuration file.
+If the data model changes, create a new migration and update the database:
+bash
+Copy code
+dotnet ef migrations add <NewMigrationName>  
+dotnet ef database update  
+💡 Why Choose Code First?
+Develop your application in a structured, object-oriented manner.
+Synchronize database and application structures automatically with migrations.
+Focus on business logic instead of SQL-based database setups.
+This project has been a fantastic learning experience as part of the Patika BootCamp. If you're working on similar projects or have any questions, feel free to reach out to me! 😊
