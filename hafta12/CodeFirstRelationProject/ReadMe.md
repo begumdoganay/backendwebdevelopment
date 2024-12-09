@@ -6,10 +6,22 @@ This project showcases the Code First approach, allowing you to define and manag
 
 Database Name: PatikaCodeFirstDb2
 Tables:
+🛠️ Database Tables
+🙍‍♂️ Users Table
+This table stores user details and includes the following columns:
 
-Users Table 🙍‍♀️
-Posts Table 📝
-There is a one-to-many relationship between these tables:
+Column	Type	Description
+Id	int	Primary Key, Auto-Incremented.
+Username	string	User's unique username.
+Email	string	User's email address.
+📝 Posts Table
+This table stores posts created by users and includes the following columns:
+
+Column	Type	Description
+Id	int	Primary Key, Auto-Incremented.
+Title	string	Title of the post.
+Content	string	Content of the post.
+UserId	int	Foreign Key linked to the Users table.
 
 A single user can have multiple posts.
 Each post belongs to only one user.
