@@ -1,0 +1,17 @@
+﻿
+<!-- .NET 7.0 SDK projesi -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<!-- Uygulama tipi: Console Application -->
+		<OutputType>Exe</OutputType>
+		<!-- Hedef .NET sürümü -->
+		<TargetFramework>net7.0</TargetFramework>
+		<!-- Proje isim alanı -->
+		<RootNamespace>Week13-Dependency-Injection.ConsoleApp</RootNamespace>
+		<!-- Özellikler -->
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+</Project>
