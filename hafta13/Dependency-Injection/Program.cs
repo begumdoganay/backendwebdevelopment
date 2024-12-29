@@ -13,7 +13,7 @@ namespace Dependency_Injection
                 // İlk öğretmen örneği oluşturuluyor
                 Console.WriteLine("1. Öğretmen Örneği:");
                 ITeacher mathTeacher = new Teacher("Ahmet", "Yılmaz", "Matematik");
-                Classroom mathClass = new Classroom(mathTeacher, "12-A");
+                Classroom mathClass = new(mathTeacher, "12-A");
                 DisplayTeacherInfo(mathClass);
 
                 // İkinci öğretmen örneği oluşturuluyor
