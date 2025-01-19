@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>BookStore_Web_Application.Core</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DocumentFormat.OpenXml" Version="3.2.0" />
+		<PackageReference Include="FluentValidation" Version="11.11.0" />
+		<PackageReference Include="GreenPipes" Version="4.0.1" />
+		<PackageReference Include="MailChimp.Net.V3" Version="5.6.0" />
+		<PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.22.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="8.0.11" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.57.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Services.Client" Version="19.225.1" />
+		<PackageReference Include="Stripe.net" Version="47.2.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\BookStore.Shared\BookStore.Shared.csproj" />
+	</ItemGroup>
+
+</Project>
